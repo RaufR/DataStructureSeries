@@ -189,8 +189,7 @@ arr.pop();
 console.log(arr);
 
 //output
-  [1, 2, 3, 4]
-;
+[1, 2, 3, 4];
 ```
 
 #### shift()
@@ -204,8 +203,7 @@ arr.shift();
 console.log(arr);
 
 //output
-  [2, 3, 4, 5]
-;
+[2, 3, 4, 5];
 ```
 
 ### Others
@@ -240,7 +238,7 @@ nums.splice(3, 4);
 console.log(nums);
 
 //output
-  [1, 2, 3, 4, 5];
+[1, 2, 3, 4, 5];
 ```
 
 #### reverse()
@@ -299,37 +297,41 @@ console.log(nums);
 1, 2, 3, 4, 100, 200;
 ```
 
-
 ## Array accessor functions
-Accessor functions can be used to access array elements. 
+
+Accessor functions can be used to access array elements.
 one of the most used accessor function is `indexOf()`. Lets take a look
 
 #### indexOf()
-Example
-```js
-const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 
-console.log(beasts.indexOf('bison'));
+Example
+
+```js
+const beasts = ["ant", "bison", "camel", "duck", "bison"];
+
+console.log(beasts.indexOf("bison"));
 //  output: 1
 ```
 
+## Array iterator functions
 
-## Array iterator functions 
 The final set of array functions we examine are iterator functions. These functions apply
 a function to each element of an array, either returning a value, a set of values, or a new
 array after applying the function to each element of an array.
 
+### Non duplication Iterator functions
 
-### Non–Array-Generating Iterator Functions
 This group of iterator functions do not generate a new array; instead,
 they either perform an operation on each element of an array or generate a single value
 from an array.
 
 #### forEach()
+
 This function takes a function as an argument
-and applies the called function to each element of an array. 
+and applies the called function to each element of an array.
 
 Exmaple
+
 ```js
 function square(num) {
 console.log(num, num * num);
@@ -347,6 +349,7 @@ console.log(nums.forEach(square));
 ```
 
 #### every()
+
 Applies a Boolean function to an array and returns
 true if the function can return true for every element in the array.
 
@@ -370,11 +373,10 @@ all numbers are even
 
 ```
 
-
-
 #### some()
+
 Will take a Boolean function and return true if at least one of the
-elements in the array meets the criterion of the Boolean function. 
+elements in the array meets the criterion of the Boolean function.
 
 Example
 
@@ -405,25 +407,28 @@ no numbers are even
 
 ```
 
-### Iterator Functions That Return a New Array
+### Duplication iterator functions
+
 There are two iterator functions that return new arrays: `map()` and `filter()`.
 
 #### map()
+
 The `map()`function works like the forEach() function.
+
 ```js
 function curve(grade) {
-return grade += 5;
+  return (grade += 5);
 }
 var grades = [77, 65, 81, 92, 83];
 var newgrades = grades.map(curve);
 console.log(newgrades);
 
 //output
-82, 70, 86, 97, 88
+82, 70, 86, 97, 88;
 ```
 
-
 #### filter()
+
 Work similiar as `every()` function
 
 Example
@@ -449,6 +454,5 @@ Passing grades:
 89,95,62,64,75,79,88,73,74
 
 ```
-
 
 ## Multi-Dimensional Array
