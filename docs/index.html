@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DataDoc</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+
+    <link rel="stylesheet" href="./light.css" />
+    <!-- <link rel="stylesheet" href="./dark.css" /> -->
+    <link
+      href="https://myCDN.com/prism@v1.x/themes/prism.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">Loading...</div>
+    <script>
+      window.$docsify = {
+        name: "Data Structure & Algorithm",
+        coverpage: true,
+        executeScript: true,
+
+        loadSidebar: true,
+        auto2top: true,
+        loadNavbar: true,
+        maxLevel: 4,
+        subMaxLevel: 3,
+        name: 'DataDoc',
+        path: 'auto',
+        //loadNavbar: "nav.md"
+      };
+    </script>
+
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+    <script src="https://myCDN.com/prism@v1.x/components/prism-core.min.js"></script>
+    <script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
