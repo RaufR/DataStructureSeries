@@ -17,31 +17,49 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
-
-    <link rel="stylesheet" href="./light.css" />
-    <!-- <link rel="stylesheet" href="./dark.css" /> -->
+    <link
+      rel="stylesheet"
+      href="./light.css"
+      title="vue"
+    />
+    <link
+      rel="stylesheet"
+      href="//unpkg.com/docsify/lib/themes/dark.css"
+      title="dark"
+      disabled
+    />
   </head>
+  <style>
+   
+  </style>
   <body>
+   
+    <div id="app"></div>
     <div id="app">Loading...</div>
     <script>
       window.$docsify = {
-        name: "Data Structure & Algorithm",
+        name: "DataDoc",
         coverpage: true,
         executeScript: true,
-
+        loadNavbar: true,
         loadSidebar: true,
         auto2top: true,
         loadNavbar: true,
         maxLevel: 4,
         subMaxLevel: 3,
         name: "DataDoc",
-        path: "auto"
-        //loadNavbar: "nav.md"
+        path: "auto",
+        logo: "/_media/icon.svg",
+        autoHeader: true,
+        notFoundPage: true
       };
     </script>
 
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  
+    </script>
   </body>
 </html>
