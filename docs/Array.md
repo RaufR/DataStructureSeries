@@ -55,22 +55,21 @@ You can also create array from a string
 
 ```js
 var str = "the quick brown fox jumped over the lazy dog";
-var wrd = str.split(" ")
-for (var i = 0; i < wrd.length; ++i>){
-    console.log(wrd[i])
+var wrd = str.split(" ");
+for (var i = 0; i < wrd.length; ++i) {
+  console.log(wrd[i]);
 }
 
-
 //output
-the
-quick
-brown
-fox
-jumped
-over
-the
-lazy
-dog
+the;
+quick;
+brown;
+fox;
+jumped;
+over;
+the;
+lazy;
+dog;
 ```
 
 ## Access and writing array
