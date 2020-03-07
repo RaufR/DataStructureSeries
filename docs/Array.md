@@ -444,4 +444,210 @@ Passing grades:
 
 ## Multi-Dimensional Array
 
-....Comin Soon......
+In Javascript array only one-dimensional, we can create multi dimensional array by creating arrays of arrays.
+
+### Create multi dimensional array
+
+A better way to create a two dimensional array in javascript.
+
+```js
+Array.matrix = function(numrows, numcols, initial) {
+  var arr = [];
+  for (var i = 0; i < numrows; ++i) {
+    var columns = [];
+    for (var j = 0; j < numcols; ++j) {
+      columns[j] = initial;
+    }
+    arr[i] = columns;
+  }
+  return arr;
+};
+```
+
+Now lets test the array we have created.
+
+```js
+var nums = Array.matrix(5, 5, 0);
+print(nums[1][1]); // displays 0
+var names = Array.matrix(3, 3, "");
+names[1][2] = "Joe";
+print(names[1][2]); // display "Joe"
+```
+
+We can also create a two-dimensional array and initialize it to a set of values in one line:
+
+!> For small data sets, this is the easiest way to create a two-dimensional array
+
+```js
+var grades = [
+  [89, 77, 78],
+  [76, 82, 81],
+  [91, 94, 89]
+];
+print(grades[2][2]); // displays 89
+```
+
+### Process two-dimensional array elements
+
+There are two fundamental pattern used to process the elements of two-dimensional array.
+
+1. Process array elements by column
+2. Process array elements by row
+
+##### Process array elements by Column
+
+!> For columnar processing the outer loop will move through the rows and inner loop will process the columns
+
+```js
+var grades = [
+  [89, 77, 78],
+  [76, 82, 81],
+  [91, 94, 89]
+];
+var total = 0;
+var avg = 0.0;
+
+for (var row = 0; row < grades.length; row++) {
+  for (var col = 0; col < grades[row].length; col++) {
+    total += grades[row][col];
+  }
+
+  avg = total / grades[row].length;
+  console.log("Student  " + parseInt(row + 1) + "average " + avg.toFixed(2));
+
+  total = 0;
+  avg = 0.0;
+}
+
+// output
+Student 1 average: 81.33
+Student 2 average: 79.67
+Student 3 average: 91.33
+
+
+```
+
+##### Process array elements by row
+
+!> To perform row-wise way, we simply have to flip the for loops so that the outer loop control the columns and the inner loops will control the rows.
+
+Example:
+
+```js
+var grades = [
+  [89, 77, 78],
+  [76, 82, 81],
+  [91, 94, 89]
+];
+var total = 0;
+var avg = 0.0;
+for (var col = 0; col < grades.length; ++col) {
+  for (var row = 0; row < grades[col].length; ++row) {
+    total += grades[row][col];
+  }
+  avg = total / grades[col].length;
+  console.log("Test " + parseInt(col + 1) + " average: " + avg.toFixed(2));
+  total = 0;
+  avg = 0.0;
+}
+
+
+//output
+Test 1 average: 85.33
+Test 2 average: 84.33
+Test 3 average: 82.67
+
+```
+
+### Jagged Array
+
+Jagged array is the array where rows in the array have different element.
+
+```js
+var jaggedArray = [
+  [89, 77],
+  [76, 82, 81],
+  [91, 94, 89, 99]
+];
+```
+
+!>Many programming languages have
+problems handling jagged arrays, but JavaScript does not since js can compute the
+length of any row
+
+Example:
+
+```js
+var grades = [
+  [89, 77],
+  [76, 82, 81],
+  [91, 94, 89, 99]
+];
+var total = 0;
+var average = 0.0;
+for (var row = 0; row < grades.length; ++row) {
+  for (var col = 0; col < grades[row].length; ++col) {
+    total += grades[row][col];
+  }
+  average = total / grades[row].length;
+  console.log(
+    "Student " + parseInt(row + 1) + " average: " + average.toFixed(2)
+  );
+  total = 0;
+  average = 0.0;
+}
+
+//Output
+Student 1 average: 83.00
+Student 2 average: 79.67
+Student 3 average: 93.25
+```
+
+## Arrays of Objects
+
+Array can consist of objects and this is most common situation when you are dealing with data from an API.
+
+```js
+let products = [
+  {
+    name: "chair",
+    inventory: 5,
+    unit_price: 45.99
+  },
+  {
+    name: "table",
+    inventory: 10,
+    unit_price: 123.75
+  },
+  {
+    name: "sofa",
+    inventory: 2,
+    unit_price: 399.5
+  }
+];
+function listProducts(prods) {
+  let product_names = [];
+  for (let i = 0; i < prods.length; i += 1) {
+    product_names.push(prods[i].name);
+  }
+  return product_names;
+}
+console.log(listProducts(products));
+
+function totalValue(prods) {
+  let inventory_value = 0;
+  for (let i = 0; i < prods.length; i += 1) {
+    inventory_value += prods[i].inventory * prods[i].unit_price;
+  }
+  return inventory_value;
+}
+console.log(totalValue(products));
+
+//output
+["chair", "table", "sofa"];
+2266.45;
+```
+
+## Arrays in Objects
+
+....coming soon....
