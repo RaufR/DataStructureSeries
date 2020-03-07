@@ -1,6 +1,6 @@
 # DataDoc
 
-> A useful guide for learning data structure and algorithm in Javascript.
+> Useful guide for learning data structure and algorithm in Javascript.
 
 ## What it is
 

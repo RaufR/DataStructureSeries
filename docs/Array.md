@@ -9,7 +9,7 @@ In this section we explore how arrays work in JavaScript and when to use them.
 
 There is several ways to create an array.
 
-##### Create and empty array by [] operator
+##### Create an empty array by [] operator
 
 ```js
 var arr = [];
@@ -39,17 +39,14 @@ var arr = new Array(1, 2, 3, 4, 5, 6);
 var arr = new Array(10);
 ```
 
-!> you can verify javascript array via below code.
+!> you can verify Javascript array via below code.
 
 ```js
 var arr = [7, 1, 33, 55];
 print(Array.isArray(arr));
-```
 
-##### Output
-
-```output
-true
+//output
+true;
 ```
 
 ## Create array from string
@@ -62,23 +59,20 @@ var wrd = str.split(" ");
 for (var i = 0; i < wrd.length; ++i) {
   console.log(wrd[i]);
 }
+
+//output
+the;
+quick;
+brown;
+fox;
+jumped;
+over;
+the;
+lazy;
+dog;
 ```
 
-##### Output
-
-```output
-the
-quick
-brown
-fox
-jumped
-over
-the
-lazy
-dog
-```
-
-## Acess and writing array
+## Access and writing array
 
 The best way to access an array is using for loop.
 
@@ -99,15 +93,12 @@ Also you can access an array by using `[]` operator
 var numbers = [1, 2, 3, 4, 5];
 var sum = numbers[0] + numbers[1] + numbers[2] + numbers[3] + numbers[4];
 print(sum);
+
+//output
+15;
 ```
 
-##### Output
-
-```output
-15
-```
-
-## Array mutator function
+## Array Mutator function
 
 Javascript provide some mutator function, which allow you to modify the array content without writing large js.
 
@@ -120,25 +111,21 @@ There is two different mutator function can be used to add elements to an array:
 
 #### push()
 
-Examlple
+Example
 
 ```js
 var arr = [1, 2, 3, 4, 5];
 arr.push(6);
 console.log(arr);
-```
 
-Output
-
-```output
-[1,2,3,4,5,6]
+//output
+[1, 2, 3, 4, 5, 6];
 ```
 
 !> Adding data to the beginning of an array is much harder than adding data to the end
-of an array. To do so without the benefit of a mutator function, each existing element
-Mutator Functions | 19of the array has to be shifted up one position before the new data is added.
+of an array.
 
-##### Below js demonstrate how to do that
+##### Below code demonstrate how to do that
 
 ```js
 var arr = [2, 3, 4, 5];
@@ -157,7 +144,7 @@ console.log(arr);
 
 #### unshift()
 
-There is an alternative solution. Using `unshift()` to add a elements to the begining of the array
+There is an alternative solution. Using `unshift()` to add a elements to the beginning of the array
 
 ```js
 var arr = [2, 3, 4, 5];
@@ -173,14 +160,14 @@ Output
 
 ### Removing Element to array
 
-There are two diffeerent mutator function to do that
+There are two different mutator function to do that
 
 1. pop()
 2. shift()
 
 #### pop()
 
-For removing element from the begining of an array you can use `pop()` mutator function
+For removing element from the beginning of an array you can use `pop()` mutator function
 Example
 
 ```js
@@ -211,8 +198,8 @@ console.log(arr);
 #### splice()
 
 You can use `splice()` for adding or removing elements from middle of an array
-To add elements to an array using splice(), you have to provide the following argu‐
-ments:
+To add elements to an array using splice(), you have to provide the following
+arguments:
 
 1. The starting index (where you want to begin adding elements)
 2. The number of elements to remove (0 when you are adding elements)
@@ -297,10 +284,10 @@ console.log(nums);
 1, 2, 3, 4, 100, 200;
 ```
 
-## Array accessor functions
+## Array Accessor functions
 
 Accessor functions can be used to access array elements.
-one of the most used accessor function is `indexOf()`. Lets take a look
+one of the most used Accessor function is `indexOf()`. Lets take a look
 
 #### indexOf()
 
@@ -429,7 +416,7 @@ console.log(newgrades);
 
 #### filter()
 
-Work similiar as `every()` function
+Work similar as `every()` function
 
 Example
 
@@ -452,7 +439,9 @@ All grades:
 39,43,89,19,46,54,48,5,13,31,27,95,62,64,35,75,79,88,73,74
 Passing grades:
 89,95,62,64,75,79,88,73,74
-
+`
 ```
 
 ## Multi-Dimensional Array
+
+....Comin Soon......
