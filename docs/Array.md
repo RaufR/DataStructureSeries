@@ -58,9 +58,9 @@ You can also create array from a string
 
 ```js
 var str = "the quick brown fox jumped over the lazy dog";
-var wrd = str.split(" ")
-for (var i = 0; i < wrd.length; ++i>){
-    console.log(wrd[i])
+var wrd = str.split(" ");
+for (var i = 0; i < wrd.length; ++i) {
+  console.log(wrd[i]);
 }
 ```
 
@@ -330,7 +330,7 @@ from an array.
 This function takes a function as an argument
 and applies the called function to each element of an array.
 
-Exmaple
+Example
 
 ```js
 function square(num) {
