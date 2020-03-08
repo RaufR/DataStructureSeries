@@ -75,3 +75,175 @@ function append(element) {
   this.dataStore[this.listSize++] = element;
 }
 ```
+
+### Find and remove elements from list
+
+For implement `remove()` function we have to define the `find()` function at first to find element in list
+Lets implement functions for removing element from list
+
+```js
+function find(element) {
+  for (var i = 0; i < this.dataStore.length; ++i) {
+    if (this.dataStore[i] == element) {
+      return i;
+    }
+  }
+  return -1;
+}
+```
+
+Below remove function use the position returned by find() function. After elements removed listSize will decrease.
+
+```js
+function remove(element) {
+  var foundAt = this.find(element);
+  if (foundAt > -1) {
+    this.dataStore.splice(foundAt, 1);
+    --this.listSize;
+    return true;
+  }
+  return false;
+}
+```
+
+### List size
+
+The `length()` function will return number of elements in list
+
+```js
+function length() {
+  return this.listSize;
+}
+```
+
+### Retrieve list element
+
+Lets create a function allow us to view list elements.
+
+```js
+function toString() {
+  return this.dataStore;
+}
+```
+
+### Insert element to list
+
+Below function will insert element into list
+
+```js
+function insert(element, after) {
+  var insertPos = this.find(after);
+  if (insertPos > -1) {
+    this.dataStore.splice(insertPos + 1, 0, element);
+    ++this.listSize;
+    return true;
+  }
+  return false;
+}
+```
+
+`insert()` uses the helper function `find()` to determine the correct insertion position
+for the new element by finding the element specified in the after argument. Once this
+position is found, we use `shift()` to insert the new element into the list. Then we
+increment listSize by 1 and return true to indicate the insertion was successful.
+
+### Remove all element from list
+
+Below function will remove all elements from list
+
+```js
+function clear() {
+  delete this.dataStore;
+  this.dataStore = [];
+  this.listSize = this.pos = 0;
+}
+```
+
+### Search element in array
+
+Below function will return boolean value based on a particular element is in list or not.
+
+```js
+function contains(element) {
+  for (var i = 0; i < this.dataStore.length; ++i) {
+    if (this.dataStore[i] == element) {
+      return true;
+    }
+  }
+  return false;
+}
+```
+
+### Traversing a List
+
+This final set of functions allows movement through a list, and the last function,
+getElement(), displays the current element in a list:
+
+```js
+function front() {
+  this.pos = 0;
+}
+function end() {
+  this.pos = this.listSize - 1;
+}
+function prev() {
+  if (this.pos > 0) {
+    --this.pos;
+  }
+}
+function next() {
+  if (this.pos < this.listSize - 1) {
+    ++this.pos;
+  }
+}
+function currPos() {
+  return this.pos;
+}
+function moveTo(position) {
+  this.pos = position;
+}
+function getElement() {
+  return this.dataStore[this.pos];
+}
+```
+
+## Iterating through list
+
+An iterator allows us to traverse a list without referencing the internal storage
+mechanism of the List class. The functions front(), end(), prev(), next(), and currPos
+provide an implementation of an iterator for our List class. Some advantages to using
+iterators over using array indexing include:
+
+1. Not having to worry about the underlying data storage structure when accessing
+   list elements.
+2. Being able to update the list and not having to update the iterator, where an index
+   becomes invalid when a new element is added to the list.
+3. Providing a uniform means of accessing elements for different types of data stores
+   used in the implemenation of a List class.
+
+With these advantages in mind, here is how to use an iterator to traverse through a list:
+
+```js
+for (names.front(); names.currPos() < names.length(); names.next()) {
+  print(names.getElement());
+}
+```
+
+The for loop starts by setting the current position to the front of the list. The loop
+continues while the value of currPos is less than the length of the list. Each time through
+the loop, the current position is moved one element forward through the use of the
+next() function.
+
+.
+We can also traverse a list backward using an iterator. Here is the code:
+
+```js
+for (names.end(); names.currPos() >= 0; names.prev()) {
+  print(names.getElement());
+}
+```
+
+The loop starts at the last element of the list and moves backward using the prev()
+function while the current position is greater than or equal to 0.
+Iterators are used only to move through a list and should not be combined with any
+functions for adding or removing items from a list.
