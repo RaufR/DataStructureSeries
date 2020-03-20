@@ -260,5 +260,3 @@ Before radix sort:
 After radix sort:
 6 15 54 69 71 76 77 79 84 99
 ```
-
-### Assign dance partner
