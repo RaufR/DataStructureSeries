@@ -229,5 +229,3 @@ function insert(newElement, item) {
   current.next = newNode;
 }
 ```
-
-## Doubly Linked-List
