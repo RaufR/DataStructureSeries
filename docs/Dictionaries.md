@@ -112,7 +112,7 @@ Cynthia -> 456
 
 ## Helping functions
 
-Lets add some more helping functions in dictionary class.
+Lets add some more helping functions in dictionary class. With helping function dictionary data structure can do much more.
 
 ##### count()
 
