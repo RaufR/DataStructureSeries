@@ -16,3 +16,6 @@
   - [Sort Algorithm](SortAlg.md)
   - [Search Algorithm](SearchAlg.md)
   - [Advance Algorithm](AdvanceAlg.md)
+
+- Quick References
+  - [JS Example](JSExample.js)
